@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ /front/app/$1 [NC,L,QSA]
+    
+    
+
+</IfModule>

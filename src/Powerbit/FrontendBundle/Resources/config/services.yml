@@ -1,0 +1,7 @@
+#parameters:
+#    my_mailer.transport:  sendmail
+
+services:
+    powerbit_frontend.electricityMeterReadManager:
+        class: Powerbit\FrontendBundle\Services\ElectricityMeterReadManager
+        arguments: [@doctrine.orm.entity_manager]
