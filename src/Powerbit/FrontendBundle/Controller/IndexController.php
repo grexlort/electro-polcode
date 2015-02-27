@@ -48,12 +48,15 @@ class IndexController extends Controller {
         $form->submit($request->query->all());
   
         if($form->isValid()) {
-            $startDate = date('Y-m-d', $form->get('startDate')->getData()); 
-            $endDate = date('Y-m-d', $form->get('dueDate')->getData());
+            $startDate = $form->get('startDate')->getData(); 
+            $endDate = $form->get('endDate')->getData();
             
             if ( !$this->electroManager->checkRange($startDate, $endDate)){
                 throw $this->createNotFoundException();  
             }
+            
+            $startDate = date('Y-m-d', $form->get('startDate')->getData()); 
+            $endDate = date('Y-m-d', $form->get('endDate')->getData());
             
             $matchedArray = $this->electroManager->getDatesArray($startDate, $endDate);
             $averageArray = $this->electroManager->getAveragesArray($matchedArray, $startDate, $endDate);
@@ -85,5 +88,5 @@ class IndexController extends Controller {
 
         return new JsonResponse($averageArray, 200);
     }
-}
 
+}

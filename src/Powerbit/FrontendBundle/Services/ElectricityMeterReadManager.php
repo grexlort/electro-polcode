@@ -14,9 +14,10 @@ class ElectricityMeterReadManager {
     public function __construct(EntityManager $em) {
         $this->em = $em;
     }
-
+    
     /**
      * Zadanie 1 - zwraca przygotowaną tablice w formacie array('date' => 'read'))
+     * 
      * @param string $startDate
      * @param string $endDate
      * @return array/null
