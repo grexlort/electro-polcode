@@ -1,11 +1,12 @@
-Instalacja:
+# front
 
-1. Pakiety Symfony
-composer install 
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.11.1.
 
-2. Pakiety Angulara + biblioteki na froncie
-cd web/front
-bower install
-npm install
+## Build & development
 
-3. Baza danych
+Run `grunt` for building and `grunt serve` for preview.
+
+## Testing
+
+Running `grunt test` will run the unit tests with karma.
