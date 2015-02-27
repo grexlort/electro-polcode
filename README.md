@@ -36,18 +36,22 @@ Zapytania do bazy danych
 Najważniejsze pliki frontend:
 ========================
 
---------------
+
 app.js
+--------------
 Globalne toolsy do pobierania indexow i kluczy z API
 
---------------
+
 main.js 
+--------------
 Wczytywanie i aktualizacja danych
 
---------------
+
 dateservice.js 
+--------------
 Komunikacja z API
 
---------------
+
 main.html
+--------------
 Wyświetlenie wykresu char.js
