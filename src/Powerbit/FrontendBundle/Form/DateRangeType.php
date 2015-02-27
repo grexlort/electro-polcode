@@ -26,9 +26,9 @@ class DateRangeType extends AbstractType {
                             'value' => 1388534400,
                             'message' => 'Tylko daty od 1 stycznia 2014'
                                 )),
-                        new Type(array(
-                            'type' => 'int',
-                            'message' => 'Timestamp musi być integerem'
+                        new LessThanOrEqual(array(
+                            'value' => 1419984000,
+                            'message' => 'Tylko daty do 31 grudnia 2014'
                                 )),
                         new NotBlank(array(
                             'message' => 'Data nie moze byc pusta'
@@ -39,13 +39,13 @@ class DateRangeType extends AbstractType {
                 ->add('endDate', null, array(
                     'mapped' => false,
                     'constraints' => array(
+                        new GreaterThanOrEqual(array(
+                            'value' => 1388534400,
+                            'message' => 'Tylko daty od 1 stycznia 2014'
+                                )),
                         new LessThanOrEqual(array(
                             'value' => 1419984000,
                             'message' => 'Tylko daty do 31 grudnia 2014'
-                                )),
-                        new Type(array(
-                            'type' => 'int',
-                            'message' => 'Timestamp musi być integerem'
                                 )),
                         new NotBlank(array(
                             'message' => 'Data nie moze byc pusta'
@@ -60,8 +60,7 @@ class DateRangeType extends AbstractType {
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver) {
         $resolver->setDefaults(array(
-            'csrf_protection' => false,
-            'data_class' => 'Powerbit\FrontendBundle\Entity\ElectricityMeterRead'
+            'csrf_protection' => false
         ));
     }
 
