@@ -17,18 +17,10 @@ angular.module('frontApp')
             };
 
             $scope.reloadChart();
-//            $scope.labels = $rootScope.Utils.keys($scope.dates);
-//            $scope.data = [$rootScope.Utils.values($scope.dates)];
-
-            console.log($rootScope.Utils.keys($scope.dates));
-            console.log($rootScope.Utils.values($scope.dates));
-
+            
             $scope.change = function () {
 
                 if ($scope.input.startDate && $scope.input.endDate) {
-
-                    console.log($scope.input.startDate);
-                    console.log($scope.input.endDate);
 
                     var startDate = dateService.toTimeStamp($scope.input.startDate);
                     var endDate = dateService.toTimeStamp($scope.input.endDate);
@@ -37,9 +29,7 @@ angular.module('frontApp')
                         $scope.input.errors = true;
                         return;
                     }
-
-                    console.log(startDate);
-                    console.log(endDate);
+                    
                     dateService.getDatesWithRange(startDate, endDate).then(function (data) {
                         $scope.labels = $rootScope.Utils.keys(data);
                         $scope.data = [$rootScope.Utils.values(data)];

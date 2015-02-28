@@ -63,11 +63,7 @@ class IndexController extends Controller {
 
             return new JsonResponse($averageArray, 200);
         }
-        else {
-            echo $form->getErrorsAsString();
-            echo date('Y-m-d', $request->get('startDate')) . "\n"; 
-            echo date('Y-m-d', $request->get('endDate')); 
-        }throw $this->createNotFoundException();  
+        else throw $this->createNotFoundException();  
     }
 
     /**
@@ -75,20 +71,11 @@ class IndexController extends Controller {
      * @Method({"GET"})
      */
     public function testAction() {
-//        header('Content-Type:text/plain');
-        $startDate = '2014-01-01'; //1388534400
-        $endDate = '2014-01-02';
+        $startDate = '2014-01-01';
+        $endDate = '2014-01-11';
 
         $matchedArray = $this->electroManager->getDatesArray($startDate, $endDate);
-
-//        print_r($matchedArray);
-
-
         $averageArray = $this->electroManager->getAveragesArray($matchedArray, $startDate, $endDate);
-
-
-//        print_r($averageArray);
-//        die();
 
         return new JsonResponse($averageArray, 200);
     }

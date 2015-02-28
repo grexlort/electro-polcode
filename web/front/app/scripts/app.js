@@ -33,8 +33,7 @@ angular
                     return values;
                 }
             };
-        }
-        )
+        })
         .config(function ($routeProvider) {
             $routeProvider
                     .when('/', {
