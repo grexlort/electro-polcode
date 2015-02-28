@@ -24,6 +24,9 @@
             max="2014-12-31"
             required 
             />
+        <div>
+            <span ng-show="input.errors">Podałeś zły zakres.</span>
+        </div>
     </form>
 
     <canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas> 

@@ -34,6 +34,7 @@ angular.module('frontApp')
                     var endDate = dateService.toTimeStamp($scope.input.endDate);
 
                     if (startDate >= endDate) {
+                        $scope.input.errors = true;
                         return;
                     }
 
@@ -42,7 +43,9 @@ angular.module('frontApp')
                     dateService.getDatesWithRange(startDate, endDate).then(function (data) {
                         $scope.labels = $rootScope.Utils.keys(data);
                         $scope.data = [$rootScope.Utils.values(data)];
+                        $scope.input.errors = false;
                     });
                 }
+
             };
         });
