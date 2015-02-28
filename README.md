@@ -39,7 +39,7 @@ Najważniejsze pliki frontend:
 
 app.js
 --------------
-Globalne toolsy do pobierania indexow i kluczy z API
+Globalne toolsy do pobierania indexow i kluczy z tablicy z API
 
 
 main.js 
@@ -55,3 +55,6 @@ Komunikacja z API
 main.html
 --------------
 Wyświetlenie wykresu char.js
+
+
+@author Marcin Czyż

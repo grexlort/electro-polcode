@@ -44,6 +44,9 @@ angular.module('frontApp')
                             });
 
                     return deffered.promise;
+                },
+                toTimeStamp: function(date){
+                    return new Date(date.getTime()) / 1000;
                 }
             };
         });

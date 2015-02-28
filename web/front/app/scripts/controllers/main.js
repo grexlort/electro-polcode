@@ -24,14 +24,25 @@ angular.module('frontApp')
             console.log($rootScope.Utils.values($scope.dates));
 
             $scope.change = function () {
-                var startDate = new Date($scope.input.startDate.getTime()) / 1000;
-                var endDate = new Date($scope.input.endDate.getTime()) / 1000;
-                console.log(startDate);
-                console.log(endDate);
-                dateService.getDatesWithRange(startDate, endDate).then(function (data) {
-                    $scope.labels = $rootScope.Utils.keys(data);
-                    $scope.data = [$rootScope.Utils.values(data)];
-                });
-                //getDatesWithRange
+
+                if ($scope.input.startDate && $scope.input.endDate) {
+
+                    console.log($scope.input.startDate);
+                    console.log($scope.input.endDate);
+
+                    var startDate = dateService.toTimeStamp($scope.input.startDate);
+                    var endDate = dateService.toTimeStamp($scope.input.endDate);
+
+                    if (startDate >= endDate) {
+                        return;
+                    }
+
+                    console.log(startDate);
+                    console.log(endDate);
+                    dateService.getDatesWithRange(startDate, endDate).then(function (data) {
+                        $scope.labels = $rootScope.Utils.keys(data);
+                        $scope.data = [$rootScope.Utils.values(data)];
+                    });
+                }
             };
         });

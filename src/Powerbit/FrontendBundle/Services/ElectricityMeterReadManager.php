@@ -88,8 +88,8 @@ class ElectricityMeterReadManager {
      * @return boolean
      */
     public function checkRange($startDate, $endDate) {
-        if (( $startDate >= 1388534400 && $startDate <= 1419984000) && ( $endDate
-                >= 1388534400 && $endDate <= 1419984000) && $endDate > $startDate
+        if (( $startDate >= 1388530800 && $startDate <= 1419984000) && ( $endDate
+                >= 1388530800 && $endDate <= 1419984000) && $endDate >= $startDate
                 + 86400) {
             return true;
         }

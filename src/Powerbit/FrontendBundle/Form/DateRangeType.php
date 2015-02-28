@@ -23,7 +23,7 @@ class DateRangeType extends AbstractType {
                     'mapped' => false,
                     'constraints' => array(
                         new GreaterThanOrEqual(array(
-                            'value' => 1388534400,
+                            'value' => 1388530800,
                             'message' => 'Tylko daty od 1 stycznia 2014'
                                 )),
                         new LessThanOrEqual(array(
@@ -40,7 +40,7 @@ class DateRangeType extends AbstractType {
                     'mapped' => false,
                     'constraints' => array(
                         new GreaterThanOrEqual(array(
-                            'value' => 1388534400,
+                            'value' => 1388530800,
                             'message' => 'Tylko daty od 1 stycznia 2014'
                                 )),
                         new LessThanOrEqual(array(

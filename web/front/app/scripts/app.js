@@ -29,7 +29,7 @@ angular
                             values.push(obj[k]);
                         }
                     }
-                    
+
                     return values;
                 }
             };

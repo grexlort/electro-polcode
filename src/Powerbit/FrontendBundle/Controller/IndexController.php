@@ -63,7 +63,11 @@ class IndexController extends Controller {
 
             return new JsonResponse($averageArray, 200);
         }
-        else throw $this->createNotFoundException();  
+        else {
+            echo $form->getErrorsAsString();
+            echo date('Y-m-d', $request->get('startDate')) . "\n"; 
+            echo date('Y-m-d', $request->get('endDate')); 
+        }throw $this->createNotFoundException();  
     }
 
     /**
@@ -72,8 +76,8 @@ class IndexController extends Controller {
      */
     public function testAction() {
 //        header('Content-Type:text/plain');
-        $startDate = '2014-01-08';
-        $endDate = '2014-01-15';
+        $startDate = '2014-01-01'; //1388534400
+        $endDate = '2014-01-02';
 
         $matchedArray = $this->electroManager->getDatesArray($startDate, $endDate);
 
